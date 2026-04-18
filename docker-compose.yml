@@ -1,0 +1,12 @@
+services:
+  rain-bot:
+    build: .
+    container_name: discord-rain-notifier
+    working_dir: /app
+    volumes:
+      - .:/app
+    env_file:
+      - .env
+    environment:
+      - TZ=Asia/Tokyo
+    restart: always
