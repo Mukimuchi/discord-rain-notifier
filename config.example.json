@@ -1,0 +1,8 @@
+{
+  "yahoo_client_id": "replace_with_rotated_client_id",
+  "channel_id": 0,
+  "latitude": "35.681236",
+  "longitude": "139.767125",
+  "notify_start_hour": 8,
+  "notify_end_hour": 22
+}
