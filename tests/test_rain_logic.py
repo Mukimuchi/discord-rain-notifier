@@ -1,7 +1,7 @@
 import datetime
 import unittest
 
-from rain_logic import is_in_notification_window, parse_pause_duration, parse_stored_datetime
+from rain_logic import get_timezone, is_in_notification_window, parse_pause_duration, parse_stored_datetime
 
 
 class PauseDurationTests(unittest.TestCase):
@@ -41,6 +41,11 @@ class StoredDatetimeTests(unittest.TestCase):
     def test_invalid_value_is_ignored(self):
         self.assertIsNone(parse_stored_datetime("not-a-date"))
         self.assertIsNone(parse_stored_datetime(None))
+
+
+class TimezoneTests(unittest.TestCase):
+    def test_tokyo_timezone_is_available(self):
+        self.assertEqual(get_timezone("Asia/Tokyo").key, "Asia/Tokyo")
 
 
 if __name__ == "__main__":
