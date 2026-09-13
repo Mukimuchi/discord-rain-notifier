@@ -27,6 +27,7 @@ def save_config() -> None:
     with temporary_file.open("w", encoding="utf-8") as file:
         json.dump(config, file, indent=2, ensure_ascii=False)
         file.write("\n")
+    os.chmod(temporary_file, 0o600)
     os.replace(temporary_file, CONFIG_FILE)
 
 
